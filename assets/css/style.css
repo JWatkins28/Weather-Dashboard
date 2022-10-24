@@ -1,14 +1,23 @@
-
-
 body {
     display: flex;
     flex-direction:column;
+}
+
+nav {
+    min-height: 60px;
+    background: rgb(58,30,170);
+    background: linear-gradient(180deg, rgba(58,30,170,1) 0%, rgba(0,110,250,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 1% 0px;
 }
 
 h1 {
     font-size: 35px;
     color: white;
     text-shadow: #474747 3px 5px 2px;
+    user-select:none;
 }
 
 h2 {
@@ -20,16 +29,6 @@ h3 {
     font-size: 20px;
     margin: 5px;
     padding: 5px;
-}
-
-nav {
-    min-height: 60px;
-    background: rgb(58,30,170);
-    background: linear-gradient(90deg, rgba(58,30,170,1) 0%, rgba(0,110,250,1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 0px 1% 0px;
 }
 
 aside {
@@ -70,26 +69,29 @@ input::placeholder {
 }
 
 button {
-    background-color: #3a1eaa;
-    border: none;
+    background-color: rgba(0,110,250,1);
+    border: 1px solid rgba(0,110,250,1);
     color:white;
     font-size: 15px;
     margin-bottom: 10px;
 }
 
 button:hover {
-    background-color:#006efa;
+    background-color:rgba(58,30,170,1);
     transition: 0.5s;
+    cursor: pointer;
 }
 
 button:active {
-    background-color: white;
+    background-color: whitesmoke;
+    transition: 0.1s;
 }
 
 #search-text {
     margin: 5px;
     font-size: 35px;
     font-weight: bolder;
+    user-select:none;
 }
 
 .container {
@@ -132,11 +134,19 @@ button:active {
 #city-history > li {
     background-color: lightgray;
     color: black;
+    font-weight: bold;
+    font-size: 15px;
     align-content: center;
     padding: 10px;
     border-radius: 5px;
     height: 35px;
     width: 290px;
+}
+
+#city-history > li:hover {
+    background-color: gray;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .day-card {
@@ -147,6 +157,11 @@ button:active {
     height: 150px;
     width: 150px;
     margin: 5px;
+}
+
+#city-container > .city-stats > li {
+    padding-top: 10px;
+    font-size: 20px;
 }
 
 .day-card > p {
@@ -162,10 +177,4 @@ button:active {
     width: 100%;
     margin: 10px 0px;
     font-weight: normal;
-}
-
-#city-history > li:hover {
-    background-color: gray;
-    transition: 0.5s;
-    cursor: grabbing;
 }
