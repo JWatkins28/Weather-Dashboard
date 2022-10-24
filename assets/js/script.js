@@ -40,7 +40,6 @@ function searchCall(requestUrl) {
                     return response.json();
                 })
                 .then(function (newData) {
-                    console.log(newData)
                     // UPDATING VALUES IN THE TOP CARD (TODAY)
                     cityName.text(newData.city.name);
                     todaysDate.text(today);
