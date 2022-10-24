@@ -1,0 +1,171 @@
+
+
+body {
+    display: flex;
+    flex-direction:column;
+}
+
+h1 {
+    font-size: 35px;
+    color: white;
+    text-shadow: #474747 3px 5px 2px;
+}
+
+h2 {
+    font-size: 25px;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+}
+
+nav {
+    min-height: 60px;
+    background: rgb(58,30,170);
+    background: linear-gradient(90deg, rgba(58,30,170,1) 0%, rgba(0,110,250,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 1% 0px;
+}
+
+aside {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+main {
+    width: 70%;
+}
+
+li {
+    margin: 10px 0px;
+}
+
+hr {
+    margin: 0px 5px;
+}
+
+button, input, ul {
+    margin: 5px;
+    height: 35px;
+    width: 290px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+input {
+    border-width: 2px;
+    border-color: lightgray;
+    font-size: 20px;
+    height: 40px;
+}
+
+input::placeholder {
+    color: lightgray;
+    font-size: 20px;
+}
+
+button {
+    background-color: #3a1eaa;
+    border: none;
+    color:white;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color:#006efa;
+    transition: 0.5s;
+}
+
+button:active {
+    background-color: white;
+}
+
+#search-text {
+    margin: 5px;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items:center;
+    justify-content:center;
+    min-width: 300px;
+}
+
+.big-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+}
+
+.city-stats > li {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 0px;
+}
+
+#city-search {
+    margin: 5px;
+}
+
+#city-container {
+    border: 1px solid black;
+    height: 200px;
+    width: 100%;
+    margin: 5px;
+    background-color: whitesmoke;
+}
+
+#city-history {
+    user-select: none;
+}
+
+#city-history > li {
+    background-color: lightgray;
+    color: black;
+    align-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    height: 35px;
+    width: 290px;
+}
+
+.day-card {
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    background-color: #323D4F;
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+}
+
+.day-card > p {
+    padding: 5px 0px;
+}
+
+#cardUl {
+    margin: 0px;
+}
+
+.city-stats > li {
+    font-size: 15px;
+    width: 100%;
+    margin: 10px 0px;
+    font-weight: normal;
+}
+
+#city-history > li:hover {
+    background-color: gray;
+    transition: 0.5s;
+    cursor: grabbing;
+}

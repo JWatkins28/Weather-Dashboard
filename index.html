@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+  ></script>
+</head>
+<body>
+    <nav id="navbar">
+        <h1>Weather Dashboard</h1>
+    </nav>
+    <div class="big-container">
+        <aside>
+            <div class="container">
+                <p id="search-text">Search for a City:</p>
+                <form id="search-form">
+                <input type="text" id="city-search" name="city-search" placeholder="Austin" />
+                <button id="search">Search</button>
+                </form>
+            </div>
+            <hr>
+            <div class="container">
+                <ul id="city-history">
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <div id="city-container">
+                <h2><span id="city-name">City Name</span> <span id="today-date">(Date)</span> <span id=today-weather>☀️</span></h2>
+                <ul class="city-stats">
+                    <li>Temp: <span id="main-temp"></span></li>
+                    <li>Wind: <span id="main-wind"></span></li>
+                    <li>Humidity: <span id="main-humid"></span></li>
+                </ul>
+            </div>
+                <h3>5-Day Forecast:</h3>
+                <div id="five-day-container"></div>               
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+</html>
