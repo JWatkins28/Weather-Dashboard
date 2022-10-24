@@ -21,7 +21,7 @@ var dateCall = moment()
 var weatherHistory = []
 
 // DEFAULT CITY FOR THE INITIAL PAGE LOAD (AUSTIN, MY CITY!)
-var defaultCity = 'http://api.openweathermap.org/geo/1.0/direct?q=Austin&limit=1&appid=7c376007b276fb1ba9659c33e922f8d2'
+var defaultCity = 'https://api.openweathermap.org/geo/1.0/direct?q=Austin&limit=1&appid=7c376007b276fb1ba9659c33e922f8d2'
 
 // API CALL FOR GETTING THE LATITUDE/LONGITUDE OF THE ENTERED CITY
 function searchCall(requestUrl) {
@@ -35,7 +35,7 @@ function searchCall(requestUrl) {
             lat = lat.toFixed(2)
             lon = lon.toFixed(2)
             // NOW A FETCH CALL PLUGGING IN THE LAT/LON VALUES TO GET THE WEATHER DATA
-            fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=7c376007b276fb1ba9659c33e922f8d2`)
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=7c376007b276fb1ba9659c33e922f8d2`)
                 .then(function (response) {
                     return response.json();
                 })
@@ -132,7 +132,7 @@ function weatherSearch(event) {
         return;
     }
     // CREATED A VARIABLE TO STORE THE URL CONTAINING THE INPUT CITY
-    var searchUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchItem}&limit=1&appid=7c376007b276fb1ba9659c33e922f8d2`;
+    var searchUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchItem}&limit=1&appid=7c376007b276fb1ba9659c33e922f8d2`;
     searchCall(searchUrl);
     $('input[name="city-search"]').val('');
 } 

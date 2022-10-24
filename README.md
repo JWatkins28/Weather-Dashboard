@@ -21,7 +21,7 @@ THEN I am again presented with current and future conditions for that city
 ---
 
 ## **Preview**
-![Website Preview](./Assets/screenshot.PNG)
+![Website Preview](./assets/screenshot.PNG)
 
 ---
 
