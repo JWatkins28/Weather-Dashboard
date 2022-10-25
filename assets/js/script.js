@@ -43,8 +43,12 @@ function searchCall(requestUrl) {
                     // UPDATING VALUES IN THE TOP CARD (TODAY)
                     cityName.text(newData.city.name);
                     todaysDate.text(today);
-                    // RUNS A CHECK TO GET THE CORRECT WEATHER ICON
-                    topweatherCheck(newData);
+                    // ADDING THE WEATHER ICON
+                    var todayIcon = $('<img>')
+                    todayIcon.attr("src", `http://openweathermap.org/img/wn/${newData.list[0].weather[0].icon}.png`)
+                    todayIcon.attr("height", "40")
+                    todayWeather.html("")
+                    todayWeather.append(todayIcon)
                     mainTemp.text(`${newData.list[0].main.temp} °F`);
                     mainWind.text(`${newData.list[0].wind.speed} MPH`);
                     mainHumid.text(`${newData.list[0].main.humidity} %`);
@@ -70,8 +74,9 @@ function fivedayForecast(forecastData) {
         cardDiv.addClass('day-card')
         var pDate = $('<p>')
         pDate.text(moment().add(daystoAdd, 'days').format('M/DD/YYYY'))
-        var pIcon = $('<p>')
-        pIcon.text(weatherCheck(forecastData, d))
+        var pIcon = $('<img>')
+        pIcon.attr("src", `http://openweathermap.org/img/wn/${forecastData.list[d].weather[0].icon}.png`)
+        pIcon.attr("height", "30")
         cardDiv.append(pDate)
         cardDiv.append(pIcon[0])
         var cardUl = $('<ul>')
@@ -81,32 +86,6 @@ function fivedayForecast(forecastData) {
         cardUl.append('<li>' + "Wind: " + `${forecastData.list[d].wind.speed} MPH` ,'</li>')
         cardUl.append('<li>' + "Humidity: " + `${forecastData.list[d].main.humidity} %` ,'</li>')
         $("#five-day-container").append($(cardDiv[0]))
-    }
-}
-
-// WEATHER CHECK FOR THE TOP "MAIN" CARD
-function topweatherCheck(topweatherData) {
-    if (topweatherData.list[0].weather[0].main == 'Clouds') {
-        todayWeather.text('☁️')
-    } else if (topweatherData.list[0].weather[0].main == 'Rain') {
-        todayWeather.text('🌧️')
-    } else if (topweatherData.list[0].weather[0].main == 'Clear') {
-        todayWeather.text('☀️')
-    } else if (topweatherData.list[0].weather[0].main == 'Snow') {
-        todayWeather.text('❄️')
-    }
-}
-
-// WEATHER CHECK FOR THE FORECAST CARDS
-function weatherCheck(weatherData, f) {
-    if (weatherData.list[f].weather[0].main == 'Clouds') {
-        return '☁️'
-    } else if (weatherData.list[f].weather[0].main == 'Rain') {
-        return '🌧️'
-    } else if (weatherData.list[f].weather[0].main == 'Clear') {
-        return '☀️'
-    } else if (weatherData.list[f].weather[0].main == 'Snow') {
-        return '❄️'
     }
 }
 
