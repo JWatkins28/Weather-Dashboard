@@ -76,7 +76,7 @@ function fivedayForecast(forecastData) {
         var pDate = $('<p>')
         pDate.text(moment().add(daystoAdd, 'days').format('M/DD/YYYY'))
         var pIcon = $('<img>')
-        var iconString = forecastData.list[0].weather[0].icon.replace(/n/g, 'd');
+        var iconString = forecastData.list[d].weather[0].icon.replace(/n/g, 'd');
         pIcon.attr("src", `http://openweathermap.org/img/wn/${iconString}.png`)
         pIcon.attr("height", "30")
         cardDiv.append(pDate)
