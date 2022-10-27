@@ -45,7 +45,8 @@ function searchCall(requestUrl) {
                     todaysDate.text(today);
                     // ADDING THE WEATHER ICON
                     var todayIcon = $('<img>')
-                    todayIcon.attr("src", `http://openweathermap.org/img/wn/${newData.list[0].weather[0].icon}.png`)
+                    var dayIcon = newData.list[0].weather[0].icon.replace(/n/g, 'd');
+                    todayIcon.attr("src", `http://openweathermap.org/img/wn/${dayIcon}.png`)
                     todayIcon.attr("height", "40")
                     todayWeather.html("")
                     todayWeather.append(todayIcon)
@@ -75,7 +76,8 @@ function fivedayForecast(forecastData) {
         var pDate = $('<p>')
         pDate.text(moment().add(daystoAdd, 'days').format('M/DD/YYYY'))
         var pIcon = $('<img>')
-        pIcon.attr("src", `http://openweathermap.org/img/wn/${forecastData.list[d].weather[0].icon}.png`)
+        var iconString = forecastData.list[0].weather[0].icon.replace(/n/g, 'd');
+        pIcon.attr("src", `http://openweathermap.org/img/wn/${iconString}.png`)
         pIcon.attr("height", "30")
         cardDiv.append(pDate)
         cardDiv.append(pIcon[0])
