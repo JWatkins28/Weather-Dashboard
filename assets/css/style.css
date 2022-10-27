@@ -123,7 +123,7 @@ button:active {
     height: 200px;
     width: 100%;
     margin: 5px;
-    background-color: whitesmoke;
+    background-color: lightgray;
 }
 
 #city-history {
